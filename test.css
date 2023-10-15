@@ -1,4 +1,29 @@
+body {
+  margin: 0 auto;
+  background-color: rgb(156, 193, 225);
+}
+
 h1 {
   font-weight: 900;
   color: blue;
+}
+
+#color-changing-div {
+  font-weight: 900;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 auto;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.clock {
+  font-size: 3rem;
+  text-align: center;
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
 }

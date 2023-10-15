@@ -22,3 +22,26 @@ document.querySelector("#stopButton").addEventListener("click", () => {
     colorInterval = null;
   }
 });
+
+function updateClock() {
+  const now = new Date();
+  let hours = now.getHours();
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const seconds = String(now.getSeconds()).padStart(2, "0");
+  let amPm = "AM";
+
+  // Convert to 12-hour format and determine AM or PM
+  if (hours >= 12) {
+    amPm = "PM";
+    hours = hours % 12 || 12; // Convert 12:00 PM to 12:00 PM, not 0:00 PM
+  }
+
+  hours = String(hours).padStart(2, "0");
+  const timeString = `${hours}:${minutes}:${seconds} ${amPm}`;
+
+  const clockElement = document.getElementById("time");
+  clockElement.textContent = timeString;
+}
+
+setInterval(updateClock, 1000); // Update the clock every second
+updateClock(); // Call it immediately to display the time
